@@ -10,7 +10,7 @@ namespace ts.codefix {
             Diagnostics._0_refers_to_a_UMD_global_but_the_current_file_is_a_module_Consider_adding_an_import_instead.code
         ],
         getCodeActions: getImportCodeActions,
-        // TODO: GH#20315
+        // TODO: GH#20315 id:730 gh:731
         fixIds: [],
         getAllCodeActions: notImplemented,
     });
@@ -158,7 +158,7 @@ namespace ts.codefix {
         return {
             description: formatMessage.apply(undefined, [undefined, description].concat(<any[]>diagnosticArgs)),
             changes,
-            // TODO: GH#20315
+            // TODO: GH#20315 id:360 gh:361
             fixId: undefined,
             kind,
             moduleSpecifier
@@ -234,7 +234,7 @@ namespace ts.codefix {
         }
     }
 
-    // TODO(anhans): This doesn't seem important to cache... just use an iterator instead of creating a new array?
+    // TODO (anhans): This doesn't seem important to cache... just use an iterator instead of creating a new array? id:290 gh:291
     function getImportDeclarations(moduleSymbol: Symbol, checker: TypeChecker, { imports }: SourceFile, cachedImportDeclarations: ImportDeclarationMap = []): ReadonlyArray<AnyImportSyntax> {
         const moduleSymbolId = getUniqueSymbolId(moduleSymbol, checker);
         let cached = cachedImportDeclarations[moduleSymbolId];

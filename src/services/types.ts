@@ -224,7 +224,7 @@ namespace ts {
         getSyntacticDiagnostics(fileName: string): Diagnostic[];
         getSemanticDiagnostics(fileName: string): Diagnostic[];
 
-        // TODO: Rename this to getProgramDiagnostics to better indicate that these are any
+        // TODO: Rename this to getProgramDiagnostics to better indicate that these are any id:739 gh:740
         // diagnostics present for the program level, and not just 'options' diagnostics.
         getCompilerOptionsDiagnostics(): Diagnostic[];
 
@@ -295,9 +295,9 @@ namespace ts {
 
         getSpanOfEnclosingComment(fileName: string, position: number, onlyMultiLine: boolean): TextSpan;
 
-        // TODO: GH#20538 return `ReadonlyArray<CodeFixAction>`
+        // TODO: GH#20538 return `ReadonlyArray<CodeFixAction>` id:388 gh:389
         getCodeFixesAtPosition(fileName: string, start: number, end: number, errorCodes: ReadonlyArray<number>, formatOptions: FormatCodeSettings): ReadonlyArray<CodeAction>;
-        // TODO: GH#20538
+        // TODO: GH#20538 id:474 gh:475
         /* @internal */
         getCombinedCodeFix(scope: CombinedCodeFixScope, fixId: {}, formatOptions: FormatCodeSettings): CombinedCodeActions;
         applyCodeActionCommand(action: CodeActionCommand): Promise<ApplyCodeActionCommandResult>;
@@ -327,7 +327,7 @@ namespace ts {
         dispose(): void;
     }
 
-    // TODO: GH#20538
+    // TODO: GH#20538 id:387 gh:388
     /* @internal */
     export interface CombinedCodeFixScope { type: "file"; fileName: string; }
 
@@ -418,7 +418,7 @@ namespace ts {
         commands?: CodeActionCommand[];
     }
 
-    // TODO: GH#20538
+    // TODO: GH#20538 id:386 gh:387
     /* @internal */
     export interface CodeFixAction extends CodeAction {
         /**
@@ -428,7 +428,7 @@ namespace ts {
         fixId?: {};
     }
 
-    // TODO: GH#20538
+    // TODO: GH#20538 id:740 gh:741
     /* @internal */
     export interface CombinedCodeActions {
         changes: ReadonlyArray<FileTextChanges>;
@@ -547,7 +547,7 @@ namespace ts {
         name: string;
         kind: ScriptElementKind;
         kindModifiers: string;
-        matchKind: string; // TODO: keyof typeof PatternMatchKind; (https://github.com/Microsoft/TypeScript/issues/15102)
+        matchKind: string; // TODO: keyof typeof PatternMatchKind; (https://github.com/Microsoft/TypeScript/issues/15102) id:393 gh:394
         isCaseSensitive: boolean;
         fileName: string;
         textSpan: TextSpan;

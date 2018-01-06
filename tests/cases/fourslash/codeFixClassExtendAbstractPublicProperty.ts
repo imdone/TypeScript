@@ -8,7 +8,7 @@
 
 verify.codeFix({
     description: "Implement inherited abstract class",
-    // TODO: GH#18445
+    // TODO: GH#18445 id:549 gh:550
     newFileContent:
 `abstract class A {
     public abstract x: number;

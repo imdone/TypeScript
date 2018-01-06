@@ -17,7 +17,7 @@ verify.applyCodeActionFromCompletion("", {
     name: "foo",
     source: "/a",
     description: `Change 'foo' to 'a.foo'`,
-    // TODO: GH#18445
+    // TODO: GH#18445 id:608 gh:609
     newFileContent: `import * as a from "./a";
 a.f;`,
 });

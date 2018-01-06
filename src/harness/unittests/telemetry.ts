@@ -57,7 +57,7 @@ namespace ts.projectSystem {
 
             open();
 
-            // TODO: Apparently compilerOptions is mutated, so have to repeat it here!
+            // TODO: Apparently compilerOptions is mutated, so have to repeat it here! id:294 gh:295
             et.assertProjectInfoTelemetryEvent({
                 projectId: Harness.mockHash("/hunter2/foo.csproj"),
                 compilerOptions: { strict: true },

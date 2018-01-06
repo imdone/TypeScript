@@ -2992,7 +2992,7 @@ namespace ts {
             // namespace hello.hi.world {
             //      function foo() {}
             //
-            //      // TODO, blah
+            //      // TODO , blah id:283 gh:284
             // }
             //
             // should be emitted as
@@ -3004,7 +3004,7 @@ namespace ts {
             //         var world;
             //         (function (world) {
             //             function foo() { }
-            //             // TODO, blah
+            //             // TODO , blah id:257 gh:258
             //         })(world = hi.world || (hi.world = {}));
             //     })(hi = hello.hi || (hello.hi = {}));
             // })(hello || (hello = {}));

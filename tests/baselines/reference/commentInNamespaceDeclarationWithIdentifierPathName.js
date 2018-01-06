@@ -3,7 +3,7 @@ namespace hello.hi.world
 {
     function foo() {}
 
-    // TODO, blah
+    // TODO , blah id:395 gh:396
 }
 
 //// [commentInNamespaceDeclarationWithIdentifierPathName.js]
@@ -14,7 +14,7 @@ var hello;
         var world;
         (function (world) {
             function foo() { }
-            // TODO, blah
+            // TODO , blah id:394 gh:395
         })(world = hi.world || (hi.world = {}));
     })(hi = hello.hi || (hello.hi = {}));
 })(hello || (hello = {}));

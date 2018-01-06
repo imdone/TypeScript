@@ -183,12 +183,12 @@ namespace ts.server {
                 entries: response.body.map<CompletionEntry>(entry => {
                     if (entry.replacementSpan !== undefined) {
                         const { name, kind, kindModifiers, sortText, replacementSpan, hasAction, source, isRecommended } = entry;
-                        // TODO: GH#241
+                        // TODO: GH#241 id:266 gh:267
                         const res: CompletionEntry = { name, kind, kindModifiers, sortText, replacementSpan: this.decodeSpan(replacementSpan, fileName), hasAction, source, isRecommended };
                         return res;
                     }
 
-                    return entry as { name: string, kind: ScriptElementKind, kindModifiers: string, sortText: string }; // TODO: GH#18217
+                    return entry as { name: string, kind: ScriptElementKind, kindModifiers: string, sortText: string }; // TODO: GH#18217 id:345 gh:346
                 })
             };
         }
@@ -234,7 +234,7 @@ namespace ts.server {
             const args: protocol.FormatRequestArgs = this.createFileLocationRequestArgsWithEndLineAndOffset(file, start, end);
 
 
-            // TODO: handle FormatCodeOptions
+            // TODO: handle FormatCodeOptions id:326 gh:327
             const request = this.processRequest<protocol.FormatRequest>(CommandNames.Format, args);
             const response = this.processResponse<protocol.FormatResponse>(request);
 
@@ -248,7 +248,7 @@ namespace ts.server {
         getFormattingEditsAfterKeystroke(fileName: string, position: number, key: string, _options: FormatCodeOptions): ts.TextChange[] {
             const args: protocol.FormatOnKeyRequestArgs = { ...this.createFileLocationRequestArgs(fileName, position), key };
 
-            // TODO: handle FormatCodeOptions
+            // TODO: handle FormatCodeOptions id:722 gh:723
             const request = this.processRequest<protocol.FormatOnKeyRequest>(CommandNames.Formatonkey, args);
             const response = this.processResponse<protocol.FormatResponse>(request);
 
@@ -559,7 +559,7 @@ namespace ts.server {
             const request = this.processRequest<protocol.CodeFixRequest>(CommandNames.GetCodeFixes, args);
             const response = this.processResponse<protocol.CodeFixResponse>(request);
 
-            // TODO: GH#20538 shouldn't need cast
+            // TODO: GH#20538 shouldn't need cast id:298 gh:299
             return (response.body as ReadonlyArray<protocol.CodeFixAction>).map(({ description, changes, fixId }) => ({ description, changes: this.convertChanges(changes, file), fixId }));
         }
 

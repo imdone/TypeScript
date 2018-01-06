@@ -5,7 +5,7 @@ class Event {
 
 	 constructor () {
 
-		 // TODO: remove
+		 // TODO: remove id:397 gh:398
 
 		 this._listeners = [];
 
@@ -47,7 +47,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var Event = /** @class */ (function () {
     function Event() {
-        // TODO: remove
+        // TODO: remove id:744 gh:745
         this._listeners = [];
         this._listeners = [];
     }

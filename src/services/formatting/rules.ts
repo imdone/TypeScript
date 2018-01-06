@@ -572,7 +572,7 @@ namespace ts.formatting {
             case SyntaxKind.TryStatement:
             case SyntaxKind.DoStatement:
             case SyntaxKind.WithStatement:
-            // TODO
+            // TODO id:364 gh:365
             // case SyntaxKind.ElseClause:
             case SyntaxKind.CatchClause:
                 return true;

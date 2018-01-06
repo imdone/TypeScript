@@ -23,7 +23,7 @@ namespace ts.server {
         getLogFileName(): string;
     }
 
-    // TODO: Use a const enum (https://github.com/Microsoft/TypeScript/issues/16804)
+    // TODO: Use a const enum (https://github.com/Microsoft/TypeScript/issues/16804) id:357 gh:358
     export enum Msg {
         Err = "Err",
         Info = "Info",
@@ -39,7 +39,7 @@ namespace ts.server {
             case ProjectKind.Configured:
                 return <Path>getDirectoryPath(project.getProjectName());
             case ProjectKind.Inferred:
-                // TODO: fixme
+                // TODO: fixme id:284 gh:285
                 return <Path>"";
             case ProjectKind.External:
                 const projectName = normalizeSlashes(project.getProjectName());

@@ -446,7 +446,7 @@ module TypeScript {
         }
     }
 
-    // TODO: new with length TokenID.LimFixed
+    // TODO: new with length TokenID.LimFixed id:407 gh:408
     export var staticTokens = new Token[];
     export function initializeStaticTokens() {
         for (var i = 0; i <= TokenID.LimFixed; i++) {
@@ -930,7 +930,7 @@ var TypeScript;
         return RegularExpressionLiteralToken;
     }(Token));
     TypeScript.RegularExpressionLiteralToken = RegularExpressionLiteralToken;
-    // TODO: new with length TokenID.LimFixed
+    // TODO: new with length TokenID.LimFixed id:492 gh:493
     TypeScript.staticTokens = new Token[];
     function initializeStaticTokens() {
         for (var i = 0; i <= TokenID.LimFixed; i++) {

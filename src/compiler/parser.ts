@@ -4523,7 +4523,7 @@ namespace ts {
             }
 
             // check if it is short-hand property assignment or normal property assignment
-            // NOTE: if token is EqualsToken it is interpreted as CoverInitializedName production
+            // NOTE: if token is EqualsToken it is interpreted as CoverInitializedName production id:273 gh:274
             // CoverInitializedName[Yield] :
             //     IdentifierReference[?Yield] Initializer[In, ?Yield]
             // this is necessary because ObjectLiteral productions are also used to cover grammar for ObjectAssignmentPattern
@@ -4837,7 +4837,7 @@ namespace ts {
             return finishNode(node);
         }
 
-        // TODO: Review for error recovery
+        // TODO: Review for error recovery id:249 gh:250
         function parseTryStatement(): TryStatement {
             const node = <TryStatement>createNode(SyntaxKind.TryStatement);
 
@@ -6284,7 +6284,7 @@ namespace ts {
                                 if (state === JSDocState.BeginningOfLine || state === JSDocState.SawAsterisk) {
                                     removeTrailingNewlines(comments);
                                     parseTag(indent);
-                                    // NOTE: According to usejsdoc.org, a tag goes to end of line, except the last tag.
+                                    // NOTE: According to usejsdoc.org, a tag goes to end of line, except the last tag. id:327 gh:328
                                     // Real-world comments may break this rule, so "BeginningOfLine" will not be a real line beginning
                                     // for malformed examples like `/** @param {string} x @returns {number} the length */`
                                     state = JSDocState.BeginningOfLine;

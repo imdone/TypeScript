@@ -13,7 +13,7 @@
 
 verify.codeFix({
     description: "Implement interface 'I'",
-    // TODO: GH#18445
+    // TODO: GH#18445 id:529 gh:530
     newFileContent:
 `enum E { a,b,c }
 interface I {

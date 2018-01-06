@@ -198,7 +198,7 @@ function handleTestConfig() {
         runners.push(new CompilerBaselineRunner(CompilerTestType.Conformance));
         runners.push(new CompilerBaselineRunner(CompilerTestType.Regressions));
 
-        // TODO: project tests don"t work in the browser yet
+        // TODO: project tests don"t work in the browser yet id:292 gh:293
         if (Utils.getExecutionEnvironment() !== Utils.ExecutionEnvironment.Browser) {
             runners.push(new ProjectRunner());
         }

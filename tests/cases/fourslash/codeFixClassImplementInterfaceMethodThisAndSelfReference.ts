@@ -8,7 +8,7 @@
 
 verify.codeFix({
     description: "Implement interface 'I'",
-    // TODO: GH#18445
+    // TODO: GH#18445 id:594 gh:595
     newFileContent:
 `interface I {
     f(x: number, y: this): I

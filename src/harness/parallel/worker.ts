@@ -122,7 +122,7 @@ namespace Harness.Parallel.Worker {
         }
         if (callback.length === 0) {
             try {
-                // TODO: If we ever start using async test completions, polyfill promise return handling
+                // TODO: If we ever start using async test completions, polyfill promise return handling id:719 gh:720
                 callback.call(fakeContext);
             }
             catch (error) {

@@ -25,7 +25,7 @@
 //                                    Resume at the next label.
 //  .yieldstar (x)                  - Delegate yield to the value of the optional
 //                                    expression `x`. Resume at the next label.
-//                                    NOTE: `x` must be an Iterator, not an Iterable.
+//                                    NOTE: `x` must be an Iterator, not an Iterable. id:331 gh:332
 //  .loop CONTINUE, BREAK           - Marks the beginning of a loop. Any "continue" or
 //                                    "break" abrupt completions jump to the CONTINUE or
 //                                    BREAK labels, respectively.
@@ -208,7 +208,7 @@ namespace ts {
         endLabel: Label;
     }
 
-    // NOTE: changes to this enum should be reflected in the __generator helper.
+    // NOTE: changes to this enum should be reflected in the __generator helper. id:314 gh:315
     const enum Instruction {
         Next = 0,
         Throw = 1,
@@ -1511,7 +1511,7 @@ namespace ts {
         }
 
         function transformAndEmitForInStatement(node: ForInStatement) {
-            // TODO(rbuckton): Source map locations
+            // TODO (rbuckton): Source map locations id:716 gh:717
             if (containsYield(node)) {
                 // [source]
                 //      for (var p in o) {

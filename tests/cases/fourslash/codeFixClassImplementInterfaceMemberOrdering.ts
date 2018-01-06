@@ -33,7 +33,7 @@
 
 verify.codeFix({
     description: "Implement interface 'I'",
-    // TODO: GH#18445
+    // TODO: GH#18445 id:527 gh:528
     newFileContent:
 `/** asdf */
 interface I {

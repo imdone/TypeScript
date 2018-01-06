@@ -1,0 +1,74 @@
+{
+  "exclude": [
+    "^(node_modules|bower_components|\\.imdone|target|build|dist|logs|flow-typed)[\\/\\\\]?|\\.(git|svn|hg|npmignore)|\\~$|\\.(jpg|png|gif|swp|ttf|otf)$"
+  ],
+  "watcher": true,
+  "keepEmptyPriority": true,
+  "code": {
+    "include_lists": [
+      "TODO",
+      "FIXME",
+      "HACK",
+      "CHANGED",
+      "XXX",
+      "IDEA",
+      "NOTE",
+      "REVIEW",
+      "TODO",
+      "NOTE",
+      "HACK",
+      "REVIEW",
+      "1",
+      "2",
+      "4903",
+      "XXX"
+    ]
+  },
+  "lists": [
+    {
+      "name": "TODO",
+      "hidden": false
+    },
+    {
+      "name": "NOTE",
+      "hidden": false
+    },
+    {
+      "name": "HACK",
+      "hidden": false
+    },
+    {
+      "name": "REVIEW",
+      "hidden": false
+    },
+    {
+      "name": "1",
+      "hidden": false
+    },
+    {
+      "name": "2",
+      "hidden": false
+    },
+    {
+      "name": "4903",
+      "hidden": false
+    },
+    {
+      "name": "XXX",
+      "hidden": false
+    }
+  ],
+  "marked": {
+    "gfm": true,
+    "tables": true,
+    "breaks": false,
+    "pedantic": false,
+    "smartLists": true,
+    "langPrefix": "language-"
+  },
+  "sync": {
+    "id": "5a50f985e38fd8346765dbc1",
+    "name": "imdone/TypeScript",
+    "useImdoneioForPriority": true
+  }
+}

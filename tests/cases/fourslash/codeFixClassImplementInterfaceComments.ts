@@ -20,7 +20,7 @@
 
 verify.codeFix({
     description: "Implement interface 'N.I'",
-    // TODO: GH#18445
+    // TODO: GH#18445 id:787 gh:788
     newFileContent:
 `namespace N {
     /**enum prefix */

@@ -174,7 +174,7 @@ namespace ts.NavigateTo {
     }
 
     function compareNavigateToItems(i1: RawNavigateToItem, i2: RawNavigateToItem) {
-        // TODO(cyrusn): get the gamut of comparisons that VS already uses here.
+        // TODO (cyrusn): get the gamut of comparisons that VS already uses here. id:366 gh:367
         return compareValues(i1.matchKind, i2.matchKind)
             || compareStringsCaseSensitiveUI(i1.name, i2.name);
     }
@@ -191,7 +191,7 @@ namespace ts.NavigateTo {
             isCaseSensitive: rawItem.isCaseSensitive,
             fileName: rawItem.fileName,
             textSpan: createTextSpanFromNode(declaration),
-            // TODO(jfreeman): What should be the containerName when the container has a computed name?
+            // TODO (jfreeman): What should be the containerName when the container has a computed name? id:367 gh:368
             containerName: containerName ? (<Identifier>containerName).text : "",
             containerKind: containerName ? getNodeKind(container) : ScriptElementKind.unknown
         };

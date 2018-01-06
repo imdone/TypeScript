@@ -16,7 +16,7 @@ eval("\u00A0var x\u00A0= 1\u00A0");
 if (x !== 1) {
 >x : Symbol(x, Decl(scannerS7.2_A1.5_T2.ts, 17, 4))
 
-  $ERROR('#1: eval("\\u00A0var x\\u00A0= 1\\u00A0"); x === 1. Actual: ' + (x));
+  $ERROR('#1: eval("\\u00A0var x\\u00A0= 1\\u00A0"); x === 1. Actual: ' + (x)); id:593 gh:594
 >x : Symbol(x, Decl(scannerS7.2_A1.5_T2.ts, 17, 4))
 }
 
@@ -27,7 +27,7 @@ if (x !== 1) {
 if (x !== 1) {
 >x : Symbol(x, Decl(scannerS7.2_A1.5_T2.ts, 17, 4))
 
-  $ERROR('#2:  var x = 1 ; x === 1. Actual: ' + (x));
+  $ERROR('#2: var x = 1 ; x === 1. Actual: ' + (x)); id:469 gh:467
 >x : Symbol(x, Decl(scannerS7.2_A1.5_T2.ts, 17, 4))
 }
 

@@ -136,7 +136,7 @@ namespace Harness.Parallel.Host {
         const workers: ChildProcessPartial[] = [];
         let closedWorkers = 0;
         for (let i = 0; i < workerCount; i++) {
-            // TODO: Just send the config over the IPC channel or in the command line arguments
+            // TODO: Just send the config over the IPC channel or in the command line arguments id:320 gh:321
             const config: TestConfig = { light: Harness.lightMode, listenForWork: true, runUnitTests };
             const configPath = ts.combinePaths(taskConfigsFolder, `task-config${i}.json`);
             Harness.IO.writeFile(configPath, JSON.stringify(config));

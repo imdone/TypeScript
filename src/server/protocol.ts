@@ -2,7 +2,7 @@
  * Declaration module describing the TypeScript Server protocol
  */
 namespace ts.server.protocol {
-    // NOTE: If updating this, be sure to also update `allCommandNames` in `harness/unittests/session.ts`.
+    // NOTE: If updating this, be sure to also update `allCommandNames` in `harness/unittests/session.ts`. id:723 gh:724
     export const enum CommandTypes {
         Brace = "brace",
         /* @internal */
@@ -102,7 +102,7 @@ namespace ts.server.protocol {
         GetCodeFixes = "getCodeFixes",
         /* @internal */
         GetCodeFixesFull = "getCodeFixes-full",
-        // TODO: GH#20538
+        // TODO: GH#20538 id:301 gh:302
         /* @internal */
         GetCombinedCodeFix = "getCombinedCodeFix",
         /* @internal */
@@ -115,7 +115,7 @@ namespace ts.server.protocol {
         /* @internal */
         GetEditsForRefactorFull = "getEditsForRefactor-full",
 
-        // NOTE: If updating this, be sure to also update `allCommandNames` in `harness/unittests/session.ts`.
+        // NOTE: If updating this, be sure to also update `allCommandNames` in `harness/unittests/session.ts`. id:271 gh:272
     }
 
     /**
@@ -255,7 +255,7 @@ namespace ts.server.protocol {
     }
 
     /**
-     * A request to get TODO comments from the file
+     * A request to get TODO comments from the file id:347 gh:348
      */
     export interface TodoCommentRequest extends FileRequest {
         command: CommandTypes.TodoComments;
@@ -267,7 +267,7 @@ namespace ts.server.protocol {
      */
     export interface TodoCommentRequestArgs extends FileRequestArgs {
         /**
-         * Array of target TodoCommentDescriptors that describes TODO comments to be found
+         * Array of target TodoCommentDescriptors that describes TODO comments to be found id:330 gh:331
          */
         descriptors: TodoCommentDescriptor[];
     }
@@ -557,14 +557,14 @@ namespace ts.server.protocol {
         arguments: CodeFixRequestArgs;
     }
 
-    // TODO: GH#20538
+    // TODO: GH#20538 id:724 gh:725
     /* @internal */
     export interface GetCombinedCodeFixRequest extends Request {
         command: CommandTypes.GetCombinedCodeFix;
         arguments: GetCombinedCodeFixRequestArgs;
     }
 
-    // TODO: GH#20538
+    // TODO: GH#20538 id:304 gh:305
     /* @internal */
     export interface GetCombinedCodeFixResponse  extends Response {
         body: CombinedCodeActions;
@@ -622,14 +622,14 @@ namespace ts.server.protocol {
         errorCodes?: ReadonlyArray<number>;
     }
 
-    // TODO: GH#20538
+    // TODO: GH#20538 id:274 gh:275
     /* @internal */
     export interface GetCombinedCodeFixRequestArgs {
         scope: GetCombinedCodeFixScope;
         fixId: {};
     }
 
-    // TODO: GH#20538
+    // TODO: GH#20538 id:348 gh:349
     /* @internal */
     export interface GetCombinedCodeFixScope {
         type: "file";
@@ -1443,7 +1443,7 @@ namespace ts.server.protocol {
 
     /**
      * Request to obtain the list of files that should be regenerated if target file is recompiled.
-     * NOTE: this us query-only operation and does not generate any output on disk.
+     * NOTE: this us query-only operation and does not generate any output on disk. id:332 gh:333
      */
     export interface CompileOnSaveAffectedFileListRequest extends FileRequest {
         command: CommandTypes.CompileOnSaveAffectedFileList;
@@ -1619,7 +1619,7 @@ namespace ts.server.protocol {
 
     export interface CodeFixResponse extends Response {
         /** The code actions that are available */
-        body?: CodeAction[]; // TODO: GH#20538 CodeFixAction[]
+        body?: CodeAction[]; // TODO: GH#20538 CodeFixAction[] id:725 gh:726
     }
 
     export interface CodeAction {
@@ -1631,14 +1631,14 @@ namespace ts.server.protocol {
         commands?: {}[];
     }
 
-    // TODO: GH#20538
+    // TODO: GH#20538 id:307 gh:308
     /* @internal */
     export interface CombinedCodeActions {
         changes: ReadonlyArray<FileCodeEdits>;
         commands?: ReadonlyArray<{}>;
     }
 
-    // TODO: GH#20538
+    // TODO: GH#20538 id:276 gh:277
     /* @internal */
     export interface CodeFixAction extends CodeAction {
         /**

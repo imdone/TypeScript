@@ -9,7 +9,7 @@
 verify.codeFix({
     description: "Declare static property 'foo'",
     index: 0,
-    // TODO: GH#18445
+    // TODO: GH#18445 id:621 gh:622
     newFileContent: `class C {
     static foo: number;\r
     static method() {

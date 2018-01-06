@@ -283,7 +283,7 @@ namespace ts.server.typingsInstaller {
                         return;
                     }
 
-                    // TODO: watch project directory
+                    // TODO: watch project directory id:728 gh:729
                     if (this.log.isEnabled()) {
                         this.log.writeLine(`Installed typings ${JSON.stringify(scopedTypings)}`);
                     }

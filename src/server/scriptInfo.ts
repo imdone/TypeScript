@@ -146,7 +146,7 @@ namespace ts.server {
                 return computePositionOfLineAndCharacter(this.getLineMap(), line - 1, offset - 1, this.text);
             }
 
-            // TODO: assert this offset is actually on the line
+            // TODO: assert this offset is actually on the line id:349 gh:350
             return this.svc.lineOffsetToPosition(line, offset);
         }
 

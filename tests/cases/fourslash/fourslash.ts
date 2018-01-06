@@ -40,7 +40,7 @@
 // src/harness/fourslash.ts API's (or the rest of the compiler) because they are unstable and complicate the
 // fourslash testing DSL. Finally, in this case, runtime reflection is (much) faster.
 //
-// TODO: figure out a better solution to the API exposure problem.
+// TODO: figure out a better solution to the API exposure problem. id:563 gh:564
 
 declare module ts {
     export type MapKey = string | number;
@@ -192,10 +192,10 @@ declare namespace FourSlashInterface {
             markerName: string,
             completions: {
                 excludes?: ReadonlyArray<string>,
-                //TODO: better type
+                //TODO: better type id:799 gh:800
                 entries: ReadonlyArray<{ entry: any, details: any }>,
             },
-        ): void; //TODO: better type
+        ): void; //TODO: better type id:540 gh:541
         applyCodeActionFromCompletion(markerName: string, options: {
             name: string,
             source?: string,

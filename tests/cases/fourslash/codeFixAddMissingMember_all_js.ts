@@ -16,7 +16,7 @@
 verify.codeFixAll({
     fixId: "addMissingMember",
     newFileContent:
-    // TODO: GH#18445
+    // TODO: GH#18445 id:524 gh:525
 `class C {
     y() {\r
         throw new Error("Method not implemented.");\r

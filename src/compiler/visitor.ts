@@ -928,7 +928,7 @@ namespace ts {
 
     /**
      * Similar to `reduceLeft`, performs a reduction against each child of a node.
-     * NOTE: Unlike `forEachChild`, this does *not* visit every node.
+     * NOTE: Unlike `forEachChild`, this does *not* visit every node. id:318 gh:319
      *
      * @param node The node containing the children to reduce.
      * @param initial The initial value to supply to the reduction.

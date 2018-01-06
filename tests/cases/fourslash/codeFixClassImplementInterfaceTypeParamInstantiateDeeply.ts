@@ -7,7 +7,7 @@
 
 verify.codeFix({
     description: "Implement interface 'I<number>'",
-    // TODO: GH#18445
+    // TODO: GH#18445 id:792 gh:793
     newFileContent:
 `interface I<T> {
     x: { y: T, z: T[] };

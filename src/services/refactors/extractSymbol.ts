@@ -844,7 +844,7 @@ namespace ts.refactor.extractSymbol {
                 newNodes.push(createVariableStatement(
                     /*modifiers*/ undefined,
                     createVariableDeclarationList(
-                        [createVariableDeclaration(getSynthesizedDeepClone(variableDeclaration.name), /*type*/ getSynthesizedDeepClone(variableDeclaration.type), /*initializer*/ call)], // TODO (acasey): test binding patterns
+                        [createVariableDeclaration(getSynthesizedDeepClone(variableDeclaration.name), /*type*/ getSynthesizedDeepClone(variableDeclaration.type), /*initializer*/ call)], // TODO (acasey): test binding patterns id:370 gh:371
                         variableDeclaration.parent.flags)));
             }
             else {
@@ -1451,7 +1451,7 @@ namespace ts.refactor.extractSymbol {
                 constantErrors.push(createDiagnosticForNode(scope, Messages.cannotExtractToJSClass));
             }
             if (isArrowFunction(scope) && !isBlock(scope.body)) {
-                // TODO (https://github.com/Microsoft/TypeScript/issues/18924): allow this
+                // TODO (https://github.com/Microsoft/TypeScript/issues/18924): allow this id:735 gh:736
                 constantErrors.push(createDiagnosticForNode(scope, Messages.cannotExtractToExpressionArrowFunction));
             }
             constantErrorsPerScope.push(constantErrors);

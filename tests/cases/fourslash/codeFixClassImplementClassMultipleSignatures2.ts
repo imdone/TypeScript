@@ -10,7 +10,7 @@
 
 verify.codeFix({
     description: "Implement interface 'A'",
-    // TODO: GH#18445
+    // TODO: GH#18445 id:586 gh:587
     newFileContent:
 `class A {
     method(a: any, b: string): boolean;

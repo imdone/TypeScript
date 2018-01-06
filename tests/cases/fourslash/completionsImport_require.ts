@@ -23,7 +23,7 @@ verify.applyCodeActionFromCompletion("b", {
     name: "foo",
     source: "/a",
     description: `Import 'foo' from module "./a"`,
-    // TODO: GH#18445
+    // TODO: GH#18445 id:610 gh:611
     newFileContent: `import { foo } from "./a";\r
 \r
 const a = require("./a");
@@ -40,7 +40,7 @@ verify.applyCodeActionFromCompletion("c", {
     name: "foo",
     source: "/a",
     description: `Import 'foo' from module "./a"`,
-    // TODO: GH#18445
+    // TODO: GH#18445 id:562 gh:563
     newFileContent: `import { foo } from "./a";\r
 \r
 const a = import("./a");

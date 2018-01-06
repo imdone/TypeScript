@@ -2557,7 +2557,7 @@ declare namespace ts {
          * Hook used by transformers to substitute expressions just before they
          * are emitted by the pretty printer.
          *
-         * NOTE: Transformation hooks should only be modified during `Transformer` initialization,
+         * NOTE: Transformation hooks should only be modified during `Transformer` initialization, id:4 gh:5
          * before returning the `NodeTransformer` callback.
          */
         onSubstituteNode: (hint: EmitHint, node: Node) => Node;
@@ -2575,7 +2575,7 @@ declare namespace ts {
          * Hook used to allow transformers to capture state before or after
          * the printer emits a node.
          *
-         * NOTE: Transformation hooks should only be modified during `Transformer` initialization,
+         * NOTE: Transformation hooks should only be modified during `Transformer` initialization, id:6 gh:7
          * before returning the `NodeTransformer` callback.
          */
         onEmitNode: (hint: EmitHint, node: Node, emitCallback: (hint: EmitHint, node: Node) => void) => void;
@@ -5017,7 +5017,7 @@ declare namespace ts.server.protocol {
         body?: TextInsertion;
     }
     /**
-     * A request to get TODO comments from the file
+     * A request to get TODO comments from the file id:5 gh:6
      */
     interface TodoCommentRequest extends FileRequest {
         command: CommandTypes.TodoComments;
@@ -5028,7 +5028,7 @@ declare namespace ts.server.protocol {
      */
     interface TodoCommentRequestArgs extends FileRequestArgs {
         /**
-         * Array of target TodoCommentDescriptors that describes TODO comments to be found
+         * Array of target TodoCommentDescriptors that describes TODO comments to be found id:12 gh:13
          */
         descriptors: TodoCommentDescriptor[];
     }
@@ -5889,7 +5889,7 @@ declare namespace ts.server.protocol {
     }
     /**
      * Request to obtain the list of files that should be regenerated if target file is recompiled.
-     * NOTE: this us query-only operation and does not generate any output on disk.
+     * NOTE: this us query-only operation and does not generate any output on disk. id:7 gh:9
      */
     interface CompileOnSaveAffectedFileListRequest extends FileRequest {
         command: CommandTypes.CompileOnSaveAffectedFileList;

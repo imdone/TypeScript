@@ -221,7 +221,7 @@ namespace ts.tscWatch {
 
             checkProgramActualFiles(watch(), [appFile.path, libFile.path, moduleFile.path]);
 
-            // TODO: Should we watch creation of config files in the root file's file hierarchy?
+            // TODO: Should we watch creation of config files in the root file's file hierarchy? id:265 gh:266
 
             // const configFileLocations = ["/a/b/c/", "/a/b/", "/a/", "/"];
             // const configFiles = flatMap(configFileLocations, location => [location + "tsconfig.json", location + "jsconfig.json"]);
@@ -284,7 +284,7 @@ namespace ts.tscWatch {
             checkWatchedDirectories(host, [configDir, combinePaths(configDir, projectSystem.nodeModulesAtTypes)], /*recursive*/ true);
         });
 
-        // TODO: if watching for config file creation
+        // TODO: if watching for config file creation id:344 gh:345
         // it("add and then remove a config file in a folder with loose files", () => {
         // });
 
@@ -1448,7 +1448,7 @@ namespace ts.tscWatch {
         });
 
         it("should work fine for files with circular references", () => {
-            // TODO: do not exit on such errors? Just continue to watch the files for update in watch mode
+            // TODO: do not exit on such errors? Just continue to watch the files for update in watch mode id:324 gh:325
 
             const file1: FileOrFolder = {
                 path: "/a/b/file1.ts",

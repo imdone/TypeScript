@@ -276,7 +276,7 @@ namespace ts.server {
             return this.currentVersion % ScriptVersionCache.maxVersions;
         }
 
-        // REVIEW: can optimize by coalescing simple edits
+        // REVIEW: can optimize by coalescing simple edits id:333 gh:334
         edit(pos: number, deleteLen: number, insertedText?: string) {
             this.changes.push(new TextChange(pos, deleteLen, insertedText));
             if (this.changes.length > ScriptVersionCache.changeNumberThreshold ||

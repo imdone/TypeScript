@@ -19,7 +19,7 @@ verify.applyCodeActionFromCompletion("", {
     name: "foo",
     source: "/a",
     description: `Import 'foo' from module "./a"`,
-    // TODO: GH#18445
+    // TODO: GH#18445 id:796 gh:797
     newFileContent: `import foo from "./a";\r
 \r
 f;`,

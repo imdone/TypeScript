@@ -9,7 +9,7 @@
 
 verify.codeFix({
     description: "Implement interface 'I1'",
-    // TODO: GH#18445
+    // TODO: GH#18445 id:592 gh:593
     newFileContent:
 `abstract class C1 { }
 abstract class C2 {

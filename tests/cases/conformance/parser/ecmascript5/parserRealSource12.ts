@@ -517,7 +517,7 @@ module TypeScript {
         }
 
         export function walkLabelChildren(preAst: Label, parent: AST, walker: IAstWalker): void {
-            //TODO: Walk "id"?
+            //TODO: Walk "id"? id:497 gh:498
         }
 
         export function walkLabeledStatementChildren(preAst: LabeledStatement, parent: AST, walker: IAstWalker): void {

@@ -57,14 +57,14 @@ namespace ts.codefix {
         return checker.typeToString(type, /*enclosingDeclaration*/ undefined, TypeFormatFlags.NoTruncation);
     }
 
-    // TODO: GH#19856 Node & { type: TypeNode }
+    // TODO: GH#19856 Node & { type: TypeNode } id:287 gh:288
     type TypeContainer =
         | AsExpression | CallSignatureDeclaration | ConstructSignatureDeclaration | FunctionDeclaration
         | GetAccessorDeclaration | IndexSignatureDeclaration | MappedTypeNode | MethodDeclaration
         | MethodSignature | ParameterDeclaration | PropertyDeclaration | PropertySignature | SetAccessorDeclaration
         | TypeAliasDeclaration | TypeAssertion | VariableDeclaration;
     function isTypeContainer(node: Node): node is TypeContainer {
-        // NOTE: Some locations are not handled yet:
+        // NOTE: Some locations are not handled yet: id:354 gh:355
         // MappedTypeNode.typeParameters and SignatureDeclaration.typeParameters, as well as CallExpression.typeArguments
         switch (node.kind) {
             case SyntaxKind.AsExpression:

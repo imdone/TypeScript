@@ -1924,7 +1924,7 @@ namespace ts {
                         : Promise.reject("Host does not implement `installPackage`");
                 default:
                     Debug.fail();
-                    // TODO: Debug.assertNever(action); will only work if there is more than one type.
+                    // TODO: Debug.assertNever(action); will only work if there is more than one type. id:371 gh:372
             }
         }
 
@@ -2013,8 +2013,8 @@ namespace ts {
                     //  3...N) The descriptor that was matched - by index.  'undefined' for each
                     //         descriptor that didn't match.  an actual value if it did match.
                     //
-                    //  i.e. 'undefined' in position 3 above means TODO(jason) didn't match.
-                    //       "hack"      in position 4 means HACK did match.
+                    //  i.e. 'undefined' in position 3 above means TODO (jason) didn't match. id:413 gh:414
+                    //       "hack"      in position 4 means HACK did match. id:372 gh:373
                     const firstDescriptorCaptureIndex = 3;
                     Debug.assert(matchArray.length === descriptors.length + firstDescriptorCaptureIndex);
 
@@ -2053,28 +2053,28 @@ namespace ts {
             }
 
             function getTodoCommentsRegExp(): RegExp {
-                // NOTE: ?:  means 'non-capture group'.  It allows us to have groups without having to
+                // NOTE: ?:  means 'non-capture group'.  It allows us to have groups without having to id:373 gh:374
                 // filter them out later in the final result array.
 
-                // TODO comments can appear in one of the following forms:
+                // TODO comments can appear in one of the following forms: id:736 gh:737
                 //
-                //  1)      // TODO     or  /////////// TODO
+                //  1)      // TODO or  /////////// TODO id:374 gh:375
                 //
-                //  2)      /* TODO     or  /********** TODO
+                //  2)      /* TODO or  /********** TODO id:416 gh:417
                 //
                 //  3)      /*
-                //           *   TODO
+                //           *   TODO id:375 gh:376
                 //           */
                 //
-                // The following three regexps are used to match the start of the text up to the TODO
+                // The following three regexps are used to match the start of the text up to the TODO id:376 gh:377
                 // comment portion.
                 const singleLineCommentStart = /(?:\/\/+\s*)/.source;
                 const multiLineCommentStart = /(?:\/\*+\s*)/.source;
                 const anyNumberOfSpacesAndAsterisksAtStartOfLine = /(?:^(?:\s|\*)*)/.source;
 
-                // Match any of the above three TODO comment start regexps.
+                // Match any of the above three TODO comment start regexps. id:737 gh:738
                 // Note that the outermost group *is* a capture group.  We want to capture the preamble
-                // so that we can determine the starting position of the TODO comment match.
+                // so that we can determine the starting position of the TODO comment match. id:377 gh:378
                 const preamble = "(" + anyNumberOfSpacesAndAsterisksAtStartOfLine + "|" + singleLineCommentStart + "|" + multiLineCommentStart + ")";
 
                 // Takes the descriptors and forms a regexp that matches them as if they were literals.
@@ -2092,7 +2092,7 @@ namespace ts {
                 const endOfLineOrEndOfComment = /(?:$|\*\/)/.source;
                 const messageRemainder = /(?:.*?)/.source;
 
-                // This is the portion of the match we'll return as part of the TODO comment result. We
+                // This is the portion of the match we'll return as part of the TODO comment result. We id:464 gh:465
                 // match the literal portion up to the end of the line or end of comment.
                 const messagePortion = "(" + literals + messageRemainder + ")";
                 const regExpString = preamble + messagePortion + endOfLineOrEndOfComment;
@@ -2104,7 +2104,7 @@ namespace ts {
                 //  'g' is so that we are doing a global search and can find matches several times
                 //  in the input.
                 //
-                //  'i' is for case insensitivity (We do this to match C# TODO comment code).
+                //  'i' is for case insensitivity (We do this to match C# TODO comment code). id:378 gh:379
                 //
                 //  'm' is so we can find matches in a multi-line input.
                 return new RegExp(regExpString, "gim");

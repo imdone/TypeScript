@@ -6,7 +6,7 @@ module.exports.route = function (server) {
  // General Login Page
  server.get(config.env.siteRoot + "/auth/login", function (req, res, next) {
   
-  // TODO Should render login page that shows auth options
+  // TODO Should render login page that shows auth options id:401 gh:402
   req.redirect("/auth/live");
  });
 }
@@ -18,7 +18,7 @@ var config = require("../config");
 module.exports.route = function (server) {
     // General Login Page
     server.get(config.env.siteRoot + "/auth/login", function (req, res, next) {
-        // TODO Should render login page that shows auth options
+        // TODO Should render login page that shows auth options id:745 gh:746
         req.redirect("/auth/live");
     });
 };

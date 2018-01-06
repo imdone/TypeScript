@@ -1,6 +1,6 @@
 /* @internal */
 namespace ts.SymbolDisplay {
-    // TODO(drosen): use contextual SemanticMeaning.
+    // TODO (drosen): use contextual SemanticMeaning. id:382 gh:383
     export function getSymbolKind(typeChecker: TypeChecker, symbol: Symbol, location: Node): ScriptElementKind {
         const flags = getCombinedLocalAndExportSymbolFlags(symbol);
 
@@ -108,7 +108,7 @@ namespace ts.SymbolDisplay {
         tags: JSDocTagInfo[];
     }
 
-    // TODO(drosen): Currently completion entry details passes the SemanticMeaning.All instead of using semanticMeaning of location
+    // TODO (drosen): Currently completion entry details passes the SemanticMeaning.All instead of using semanticMeaning of location id:384 gh:385
     export function getSymbolDisplayPartsDocumentationAndSymbolKind(typeChecker: TypeChecker, symbol: Symbol, sourceFile: SourceFile, enclosingDeclaration: Node,
         location: Node, semanticMeaning = getMeaningFromLocation(location)): SymbolDisplayPartsDocumentationAndSymbolKind {
 

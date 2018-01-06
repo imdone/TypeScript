@@ -27,7 +27,7 @@ function verifyCompletionsInJsDocType(marker: string, { verifyType, verifyValue,
 
     verifyType("T", "module");
 
-    // TODO: May be filter keywords based on context
+    // TODO: May be filter keywords based on context id:542 gh:543
     //verifyType("string", "keyword");
     //verifyType("number", "keyword");
 
