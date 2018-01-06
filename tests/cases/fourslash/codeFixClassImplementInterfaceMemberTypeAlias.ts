@@ -6,7 +6,7 @@
 
 verify.codeFix({
     description: "Implement interface 'I'",
-    // TODO: GH#18445
+    // TODO: GH#18445 id:630 gh:631
     newFileContent:
 `type MyType = [string, number];
 interface I { x: MyType; test(a: MyType): void; }

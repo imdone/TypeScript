@@ -22,7 +22,7 @@ class MyClass {
 }
 
 // Let's use it
-// TODO: Error on missing 'reqd'
+// TODO: Error on missing 'reqd' id:483 gh:484
 var b1 = <MyClass reqd={true} />; 
 
 // Mistyped attribute member
@@ -50,7 +50,7 @@ var MyClass = /** @class */ (function () {
     return MyClass;
 }());
 // Let's use it
-// TODO: Error on missing 'reqd'
+// TODO: Error on missing 'reqd' id:506 gh:507
 var b1 = <MyClass reqd={true}/>;
 // Mistyped attribute member
 // sample.tsx(23,22): error TS2322: Type '{ x: number; y: string; }' is not assignable to type '{ x: number; y: number; }'.

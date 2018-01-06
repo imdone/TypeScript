@@ -113,7 +113,7 @@ module TypeScript {
 
     // The resident table is expected to reference the same table object, whereas the 
     // transientTable may reference different objects over time
-    // REVIEW:  WARNING:  For performance reasons, neither the primary nor secondary table may be null
+    // REVIEW: WARNING:  For performance reasons, neither the primary nor secondary table may be null id:427 gh:428
     export class DualStringHashTable implements IHashTable {
 
         public insertPrimary = true;
@@ -392,7 +392,7 @@ var TypeScript;
     TypeScript.StringHashTable = StringHashTable;
     // The resident table is expected to reference the same table object, whereas the 
     // transientTable may reference different objects over time
-    // REVIEW:  WARNING:  For performance reasons, neither the primary nor secondary table may be null
+    // REVIEW: WARNING:  For performance reasons, neither the primary nor secondary table may be null id:572 gh:573
     var DualStringHashTable = /** @class */ (function () {
         function DualStringHashTable(primaryTable, secondaryTable) {
             this.primaryTable = primaryTable;

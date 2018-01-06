@@ -316,13 +316,13 @@ interface Array<T> {}`
                             }
                         }
                         else {
-                            // TODO: Changing from file => folder
+                            // TODO: Changing from file => folder id:721 gh:722
                         }
                     }
                     else {
                         // Folder
                         if (isString(fileOrDirectory.content)) {
-                            // TODO: Changing from folder => file
+                            // TODO: Changing from folder => file id:296 gh:297
                         }
                         else {
                             // Folder update: Nothing to do.

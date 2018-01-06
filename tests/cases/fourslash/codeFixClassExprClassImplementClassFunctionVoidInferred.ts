@@ -7,7 +7,7 @@
 
 verify.codeFix({
     description: "Implement interface 'A'",
-    // TODO: GH#18795
+    // TODO: GH#18795 id:623 gh:624
     newFileContent:
 `class A {
     f() {}

@@ -8,7 +8,7 @@
 
 verify.codeFix({
     description: "Implement interface 'IPerson'",
-    // TODO: GH#18445
+    // TODO: GH#18445 id:791 gh:792
     newFileContent:
 `interface IPerson {
     name: string;

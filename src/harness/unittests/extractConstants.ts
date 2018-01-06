@@ -107,11 +107,11 @@ function F() {
         testExtractConstant("extractConstant_VariableList_const",
             `const a = 1, b = [#|a + 1|];`);
 
-        // NOTE: this test isn't normative - it just documents our sub-optimal behavior.
+        // NOTE: this test isn't normative - it just documents our sub-optimal behavior. id:263 gh:264
         testExtractConstant("extractConstant_VariableList_let",
             `let a = 1, b = [#|a + 1|];`);
 
-        // NOTE: this test isn't normative - it just documents our sub-optimal behavior.
+        // NOTE: this test isn't normative - it just documents our sub-optimal behavior. id:342 gh:343
         testExtractConstant("extractConstant_VariableList_MultipleLines",
             `const /*About A*/a = 1,
     /*About B*/b = [#|a + 1|];`);
@@ -263,7 +263,7 @@ namespace N { // Force this test to be TS-only
     }
 }`);
 
-        // TODO (https://github.com/Microsoft/TypeScript/issues/20727): the extracted constant should have a type annotation.
+        // TODO (https://github.com/Microsoft/TypeScript/issues/20727): the extracted constant should have a type annotation. id:322 gh:323
         testExtractConstant("extractConstant_ContextualType", `
 interface I { a: 1 | 2 | 3 }
 let i: I = [#|{ a: 1 }|];

@@ -178,9 +178,7 @@ async function I() {
     }
 }
 
-// addresses github issue #4903:
-
-const p00 = p.catch();
+// addresses github issue #4903: const p00 = p.catch(); id:591 gh:592
 >p00 : Promise<boolean>
 >p.catch() : Promise<boolean>
 >p.catch : <TResult = never>(onrejected?: (reason: any) => TResult | PromiseLike<TResult>) => Promise<boolean | TResult>

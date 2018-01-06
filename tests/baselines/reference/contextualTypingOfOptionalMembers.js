@@ -71,7 +71,7 @@ interface ActionsObjectOr<State> {
 
 declare function App4<State, Actions extends ActionsObjectOr<State>>(props: Options<State, Actions>["actions"] & { state: State }): JSX.Element;
 
-const a = <App4 state={100} foo={s => s} />; // TODO: should be number => number, but JSX resolution is missing an inferential pass
+const a = <App4 state={100} foo={s => s} />; // TODO: should be number => number, but JSX resolution is missing an inferential pass id:743 gh:744
 
 
 //// [index.jsx]
@@ -100,4 +100,4 @@ app3({
     ],
     view: function (s, a) { return undefined; }
 });
-var a = <App4 state={100} foo={function (s) { return s; }}/>; // TODO: should be number => number, but JSX resolution is missing an inferential pass
+var a = <App4 state={100} foo={function (s) { return s; }}/>; // TODO: should be number => number, but JSX resolution is missing an inferential pass id:402 gh:403

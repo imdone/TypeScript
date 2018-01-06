@@ -453,7 +453,7 @@ module TypeScript {
         // inside a comment, because the "class" AST node has a limChar corresponding to the position of 
         // the "{" character, meaning we don't traverse the tree down to the stmt list of the class, meaning
         // we don't find the "precomment" attached to the errorneous empty stmt.
-        //TODO: It would be nice to be able to get rid of this.
+        //TODO: It would be nice to be able to get rid of this. id:417 gh:418
         DontPruneSearchBasedOnPosition = 1 << 1,
     }
 
@@ -495,7 +495,7 @@ module TypeScript {
                 var limChar = cur.limChar + (inclusive ? 1 : 0)
                 if (pos >= minChar && pos < limChar) {
 
-                    // TODO: Since AST is sometimes not correct wrt to position, only add "cur" if it's better
+                    // TODO: Since AST is sometimes not correct wrt to position, only add "cur" if it's better id:418 gh:419
                     //       than top of the stack.
                     var previous = ctx.path.ast();
                     if (previous == null || (cur.minChar >= previous.minChar && cur.limChar <= previous.limChar)) {
@@ -967,7 +967,7 @@ var TypeScript;
         // inside a comment, because the "class" AST node has a limChar corresponding to the position of 
         // the "{" character, meaning we don't traverse the tree down to the stmt list of the class, meaning
         // we don't find the "precomment" attached to the errorneous empty stmt.
-        //TODO: It would be nice to be able to get rid of this.
+        //TODO: It would be nice to be able to get rid of this. id:750 gh:751
         GetAstPathOptions[GetAstPathOptions["DontPruneSearchBasedOnPosition"] = 2] = "DontPruneSearchBasedOnPosition";
     })(GetAstPathOptions = TypeScript.GetAstPathOptions || (TypeScript.GetAstPathOptions = {}));
     ///
@@ -1004,7 +1004,7 @@ var TypeScript;
                 var minChar = cur.minChar;
                 var limChar = cur.limChar + (inclusive ? 1 : 0);
                 if (pos >= minChar && pos < limChar) {
-                    // TODO: Since AST is sometimes not correct wrt to position, only add "cur" if it's better
+                    // TODO: Since AST is sometimes not correct wrt to position, only add "cur" if it's better id:425 gh:426
                     //       than top of the stack.
                     var previous = ctx.path.ast();
                     if (previous == null || (cur.minChar >= previous.minChar && cur.limChar <= previous.limChar)) {

@@ -782,7 +782,7 @@ namespace ts.server {
         private handleDeletedFile(info: ScriptInfo) {
             this.stopWatchingScriptInfo(info);
 
-            // TODO: handle isOpen = true case
+            // TODO: handle isOpen = true case id:268 gh:269
 
             if (!info.isScriptOpen()) {
                 this.filenameToScriptInfo.delete(info.path);
@@ -1514,7 +1514,7 @@ namespace ts.server {
                 cachedDirectoryStructureHost);
 
             project.configFileSpecs = configFileSpecs;
-            // TODO: We probably should also watch the configFiles that are extended
+            // TODO: We probably should also watch the configFiles that are extended id:346 gh:347
             project.configFileWatcher = this.watchFile(
                 this.host,
                 configFileName,
@@ -1683,7 +1683,7 @@ namespace ts.server {
                 // ignore inferred projects that don't contain the root's path
                 if (!containsPath(project.projectRootPath, info.path, this.host.getCurrentDirectory(), !this.host.useCaseSensitiveFileNames)) continue;
                 // ignore inferred projects that are higher up in the project root.
-                // TODO(rbuckton): Should we add the file as a root to these as well?
+                // TODO (rbuckton): Should we add the file as a root to these as well? id:328 gh:329
                 if (bestMatch && bestMatch.projectRootPath.length > project.projectRootPath.length) continue;
                 bestMatch = project;
             }

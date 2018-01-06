@@ -7,7 +7,7 @@
 
 verify.codeFix({
     description: "Implement interface 'I<Y>'",
-    // TODO: GH#18445
+    // TODO: GH#18445 id:629 gh:630
     newFileContent:
 `interface I<X> {
     x: keyof X;

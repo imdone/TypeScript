@@ -23,11 +23,11 @@ if (x !== 1) {
 >x : number
 >1 : 1
 
-  $ERROR('#1: var\\nx\\n=\\n1\\n; x === 1. Actual: ' + (x));
->$ERROR('#1: var\\nx\\n=\\n1\\n; x === 1. Actual: ' + (x)) : any
+  $ERROR('#1: var\\nx\\n=\\n1\\n; x === 1. Actual: ' + (x)); id:475 gh:476
+>$ERROR('#1: var\\nx\\n=\\n1\\n; x === 1. Actual: ' + (x)) : any id:768 gh:769
 >$ERROR : any
->'#1: var\\nx\\n=\\n1\\n; x === 1. Actual: ' + (x) : string
->'#1: var\\nx\\n=\\n1\\n; x === 1. Actual: ' : "#1: var\\nx\\n=\\n1\\n; x === 1. Actual: "
+>'#1: var\\nx\\n=\\n1\\n; x === 1. Actual: ' + (x) : string id:481 gh:482
+>'#1: var\\nx\\n=\\n1\\n; x === 1. Actual: ' : "#1: var\\nx\\n=\\n1\\n; x === 1. Actual: " id:599 gh:600
 >(x) : number
 >x : number
 }

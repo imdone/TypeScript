@@ -280,7 +280,7 @@ namespace ts.JsTyping {
         }
         // check if name is scope package like: starts with @ and has one '/' in the middle
         // scoped packages are not currently supported
-        // TODO: when support will be added we'll need to split and check both scope and package name
+        // TODO: when support will be added we'll need to split and check both scope and package name id:383 gh:384
         if (/^@[^/]+\/[^/]+$/.test(packageName)) {
             return PackageNameValidationResult.ScopedPackagesNotSupported;
         }

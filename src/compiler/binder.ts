@@ -442,12 +442,12 @@ namespace ts {
                 //   1. We treat locals and exports of the same name as mutually exclusive within a container.
                 //      That means the binder will issue a Duplicate Identifier error if you mix locals and exports
                 //      with the same name in the same container.
-                //      TODO: Make this a more specific error and decouple it from the exclusion logic.
+                //      TODO: Make this a more specific error and decouple it from the exclusion logic. id:227 gh:228
                 //   2. When we checkIdentifier in the checker, we set its resolved symbol to the local symbol,
                 //      but return the export symbol (by calling getExportSymbolOfValueSymbolIfExported). That way
                 //      when the emitter comes back to it, it knows not to qualify the name if it was found in a containing scope.
 
-                // NOTE: Nested ambient modules always should go to to 'locals' table to prevent their automatic merge
+                // NOTE: Nested ambient modules always should go to to 'locals' table to prevent their automatic merge id:312 gh:313
                 //       during global merging in the checker. Why? The only case when ambient module is permitted inside another module is module augmentation
                 //       and this case is specially handled. Module augmentations should only be merged with original module definition
                 //       and should never be merged directly with other augmentation, and the latter case would be possible if automatic merge is allowed.
@@ -1051,7 +1051,7 @@ namespace ts {
         function bindTryStatement(node: TryStatement): void {
             const preFinallyLabel = createBranchLabel();
             const preTryFlow = currentFlow;
-            // TODO: Every statement in try block is potentially an exit point!
+            // TODO: Every statement in try block is potentially an exit point! id:251 gh:252
             bind(node.tryBlock);
             addAntecedent(preFinallyLabel, currentFlow);
 
@@ -3562,7 +3562,7 @@ namespace ts {
     /**
      * Gets the transform flags to exclude when unioning the transform flags of a subtree.
      *
-     * NOTE: This needs to be kept up-to-date with the exclusions used in `computeTransformFlagsForNode`.
+     * NOTE: This needs to be kept up-to-date with the exclusions used in `computeTransformFlagsForNode`. id:707 gh:708
      *       For performance reasons, `computeTransformFlagsForNode` uses local constant values rather
      *       than calling this function.
      */

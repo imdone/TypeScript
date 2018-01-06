@@ -838,7 +838,7 @@ module Harness {
                 return this.compilesOk(testCode);
             }
 
-            // TODO: Find an implementation of isIdenticalTo that works.
+            // TODO: Find an implementation of isIdenticalTo that works. id:459 gh:460
             //public isIdenticalTo(other: Type) {
             //    var testCode = 'module __test1__ {\n';
             //    testCode += '    ' + this.code + ';\n';
@@ -1081,7 +1081,7 @@ module Harness {
                         name = !(<TypeScript.FuncDecl>ast).name ? "" : (<TypeScript.FuncDecl>ast).name.actualText; // name == null for lambdas
                         break;
                     default:
-                        // TODO: is there a reason to mess with all the special cases above and not just do this (ie take whatever property is there and works?)
+                        // TODO: is there a reason to mess with all the special cases above and not just do this (ie take whatever property is there and works?) id:587 gh:588
                         var a = <any>ast;
                         name = (a.id) ? (a.id.actualText) : (a.name) ? a.name.actualText : (a.text) ? a.text : '';
                         break;
@@ -1265,7 +1265,7 @@ module Harness {
                 }
             }
             if (!script) {
-                // TODO: make this toggleable, shouldn't be necessary once typecheck bugs are cleaned up
+                // TODO: make this toggleable, shouldn't be necessary once typecheck bugs are cleaned up id:458 gh:459
                 // but without it subsequent tests are treated as edits, making for somewhat useful stress testing
                 // of persistent typecheck state
                 //compiler.addUnit("", uName, isResident, references); // equivalent to compiler.deleteUnit(...)
@@ -1359,7 +1359,7 @@ module Harness {
 
             var errors;
             if (usePull) {
-                // TODO: no emit support with pull yet
+                // TODO: no emit support with pull yet id:457 gh:458
                 errors = compiler.pullGetErrorsForFile(uName);
                 emit(stdout, true);
             }
@@ -1387,7 +1387,7 @@ module Harness {
             } else {
                 var addedFiles = [];
                 var precompile = () => {
-                    // REVIEW: if any dependency has a triple slash reference then does postCompile potentially have to do a recreate since we can't update references with updateUnit?
+                    // REVIEW: if any dependency has a triple slash reference then does postCompile potentially have to do a recreate since we can't update references with updateUnit? id:763 gh:764
                     // easy enough to do if so, prefer to avoid the recreate cost until it proves to be an issue
                     dependencies.forEach(dep => {
                         addUnit(dep.content, dep.name, false, Harness.Compiler.isDeclareFile(dep.name));
@@ -2797,7 +2797,7 @@ var Harness;
                 testCode += '}\n';
                 return this.compilesOk(testCode);
             };
-            // TODO: Find an implementation of isIdenticalTo that works.
+            // TODO: Find an implementation of isIdenticalTo that works. id:462 gh:463
             //public isIdenticalTo(other: Type) {
             //    var testCode = 'module __test1__ {\n';
             //    testCode += '    ' + this.code + ';\n';
@@ -3007,7 +3007,7 @@ var Harness;
                         name = !ast.name ? "" : ast.name.actualText; // name == null for lambdas
                         break;
                     default:
-                        // TODO: is there a reason to mess with all the special cases above and not just do this (ie take whatever property is there and works?)
+                        // TODO: is there a reason to mess with all the special cases above and not just do this (ie take whatever property is there and works?) id:589 gh:590
                         var a = ast;
                         name = (a.id) ? (a.id.actualText) : (a.name) ? a.name.actualText : (a.text) ? a.text : '';
                         break;
@@ -3167,7 +3167,7 @@ var Harness;
                 }
             }
             if (!script) {
-                // TODO: make this toggleable, shouldn't be necessary once typecheck bugs are cleaned up
+                // TODO: make this toggleable, shouldn't be necessary once typecheck bugs are cleaned up id:461 gh:462
                 // but without it subsequent tests are treated as edits, making for somewhat useful stress testing
                 // of persistent typecheck state
                 //compiler.addUnit("", uName, isResident, references); // equivalent to compiler.deleteUnit(...)
@@ -3252,7 +3252,7 @@ var Harness;
             compile(code, uName);
             var errors;
             if (Harness.usePull) {
-                // TODO: no emit support with pull yet
+                // TODO: no emit support with pull yet id:460 gh:461
                 errors = compiler.pullGetErrorsForFile(uName);
                 emit(stdout, true);
             }
@@ -3279,7 +3279,7 @@ var Harness;
             else {
                 var addedFiles = [];
                 var precompile = function () {
-                    // REVIEW: if any dependency has a triple slash reference then does postCompile potentially have to do a recreate since we can't update references with updateUnit?
+                    // REVIEW: if any dependency has a triple slash reference then does postCompile potentially have to do a recreate since we can't update references with updateUnit? id:764 gh:765
                     // easy enough to do if so, prefer to avoid the recreate cost until it proves to be an issue
                     dependencies.forEach(function (dep) {
                         addUnit(dep.content, dep.name, false, Harness.Compiler.isDeclareFile(dep.name));

@@ -20,11 +20,11 @@ if (x !== 1) {
 >x : number
 >1 : 1
 
-  $ERROR('#1: eval("\\u00A0var x\\u00A0= 1\\u00A0"); x === 1. Actual: ' + (x));
->$ERROR('#1: eval("\\u00A0var x\\u00A0= 1\\u00A0"); x === 1. Actual: ' + (x)) : any
+  $ERROR('#1: eval("\\u00A0var x\\u00A0= 1\\u00A0"); x === 1. Actual: ' + (x)); id:581 gh:582
+>$ERROR('#1: eval("\\u00A0var x\\u00A0= 1\\u00A0"); x === 1. Actual: ' + (x)) : any id:449 gh:450
 >$ERROR : any
->'#1: eval("\\u00A0var x\\u00A0= 1\\u00A0"); x === 1. Actual: ' + (x) : string
->'#1: eval("\\u00A0var x\\u00A0= 1\\u00A0"); x === 1. Actual: ' : "#1: eval(\"\\u00A0var x\\u00A0= 1\\u00A0\"); x === 1. Actual: "
+>'#1: eval("\\u00A0var x\\u00A0= 1\\u00A0"); x === 1. Actual: ' + (x) : string id:447 gh:448
+>'#1: eval("\\u00A0var x\\u00A0= 1\\u00A0"); x === 1. Actual: ' : "#1: eval(\"\\u00A0var x\\u00A0= 1\\u00A0\"); x === 1. Actual: " id:760 gh:761
 >(x) : number
 >x : number
 }
@@ -39,11 +39,11 @@ if (x !== 1) {
 >x : number
 >1 : 1
 
-  $ERROR('#2:  var x = 1 ; x === 1. Actual: ' + (x));
->$ERROR('#2:  var x = 1 ; x === 1. Actual: ' + (x)) : any
+  $ERROR('#2: var x = 1 ; x === 1. Actual: ' + (x)); id:453 gh:454
+>$ERROR('#2: var x = 1 ; x === 1. Actual: ' + (x)) : any id:583 gh:584
 >$ERROR : any
->'#2:  var x = 1 ; x === 1. Actual: ' + (x) : string
->'#2:  var x = 1 ; x === 1. Actual: ' : "#2:  var x = 1 ; x === 1. Actual: "
+>'#2: var x = 1 ; x === 1. Actual: ' + (x) : string id:452 gh:453
+>'#2: var x = 1 ; x === 1. Actual: ' : "#2:  var x = 1 ; x === 1. Actual: " id:451 gh:452
 >(x) : number
 >x : number
 }

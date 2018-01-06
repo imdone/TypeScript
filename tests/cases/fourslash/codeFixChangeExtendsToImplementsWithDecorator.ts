@@ -12,6 +12,6 @@
 //// [|class A extends I1 implements I2 { }|]
 verify.codeFix({
     description: "Change 'extends' to 'implements'",
-    // TODO: GH#18794
+    // TODO: GH#18794 id:782 gh:783
     newRangeContent: "class A implements I1, I2 { }",
 });

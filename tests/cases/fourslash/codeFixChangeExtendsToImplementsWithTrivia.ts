@@ -12,7 +12,7 @@
 
 verify.codeFix({
     description: "Change 'extends' to 'implements'",
-    // TODO: GH#18794
+    // TODO: GH#18794 id:517 gh:518
     newRangeContent: `class MyClass /*A !*/ //B !
     /*C !*/ implements /*D !*/ I1, /*E !*/ //F !
     /*G !*/ /*H !*/ I2 /*I !*/, /*J !*/ I3 /*K !*/ //L !`,

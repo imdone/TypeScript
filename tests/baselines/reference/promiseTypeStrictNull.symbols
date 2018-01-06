@@ -157,9 +157,7 @@ async function I() {
     }
 }
 
-// addresses github issue #4903:
-
-const p00 = p.catch();
+// addresses github issue #4903: const p00 = p.catch(); id:465 gh:466
 >p00 : Symbol(p00, Decl(promiseTypeStrictNull.ts, 84, 5))
 >p.catch : Symbol(Promise.catch, Decl(lib.es5.d.ts, --, --))
 >p : Symbol(p, Decl(promiseTypeStrictNull.ts, 0, 11))

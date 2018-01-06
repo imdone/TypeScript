@@ -119,7 +119,7 @@ c.explicitC = m => m + this.n;
 c.explicitThis = m => m + this.n;
 c.explicitProperty = m => m + this.n;
 
-//NOTE: this=C here, I guess?
+//NOTE: this=C here, I guess? id:620 gh:621
 c.explicitThis = explicitCFunction;
 c.explicitThis = function(this: C, m: number) { return this.n + m };
 

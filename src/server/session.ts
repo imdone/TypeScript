@@ -1115,7 +1115,7 @@ namespace ts.server {
             const startPosition = scriptInfo.lineOffsetToPosition(args.line, args.offset);
             const endPosition = scriptInfo.lineOffsetToPosition(args.endLine, args.endOffset);
 
-            // TODO: avoid duplicate code (with formatonkey)
+            // TODO: avoid duplicate code (with formatonkey) id:278 gh:279
             const edits = languageService.getFormattingEditsForRange(file, startPosition, endPosition,
                 this.projectService.getFormatCodeOptions(file));
             if (!edits) {
@@ -1585,8 +1585,8 @@ namespace ts.server {
             for (const command of toArray(commands)) {
                 const { project } = this.getFileAndProject(command);
                 project.getLanguageService().applyCodeActionCommand(command).then(
-                    _result => { /* TODO: GH#20447 report success message? */ },
-                    _error => { /* TODO: GH#20447 report errors */ });
+                    _result => { /* TODO: GH#20447 report success message? id:350 gh:351*/ },
+                    _error => { /* TODO: GH#20447 report errors id:335 gh:336*/ });
             }
             return {};
         }
@@ -1718,17 +1718,17 @@ namespace ts.server {
             },
             [CommandNames.OpenExternalProject]: (request: protocol.OpenExternalProjectRequest) => {
                 this.projectService.openExternalProject(request.arguments, /*suppressRefreshOfInferredProjects*/ false);
-                // TODO: GH#20447 report errors
+                // TODO: GH#20447 report errors id:727 gh:728
                 return this.requiredResponse(/*response*/ true);
             },
             [CommandNames.OpenExternalProjects]: (request: protocol.OpenExternalProjectsRequest) => {
                 this.projectService.openExternalProjects(request.arguments.projects);
-                // TODO: GH#20447 report errors
+                // TODO: GH#20447 report errors id:355 gh:356
                 return this.requiredResponse(/*response*/ true);
             },
             [CommandNames.CloseExternalProject]: (request: protocol.CloseExternalProjectRequest) => {
                 this.projectService.closeExternalProject(request.arguments.projectFileName);
-                // TODO: GH#20447 report errors
+                // TODO: GH#20447 report errors id:281 gh:282
                 return this.requiredResponse(/*response*/ true);
             },
             [CommandNames.SynchronizeProjectList]: (request: protocol.SynchronizeProjectListRequest) => {
@@ -1752,7 +1752,7 @@ namespace ts.server {
             [CommandNames.ApplyChangedToOpenFiles]: (request: protocol.ApplyChangedToOpenFilesRequest) => {
                 this.changeSeq++;
                 this.projectService.applyChangesInOpenFiles(request.arguments.openFiles, request.arguments.changedFiles, request.arguments.closedFiles);
-                // TODO: report errors
+                // TODO: report errors id:351 gh:352
                 return this.requiredResponse(/*response*/ true);
             },
             [CommandNames.Exit]: () => {

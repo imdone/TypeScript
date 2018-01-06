@@ -7,6 +7,6 @@
 
 verify.codeFix({
     description: "Change 'extends' to 'implements'",
-    // TODO: GH#18794
+    // TODO: GH#18794 id:545 gh:546
     newRangeContent: "abstract class A implements I1, I2",
 });

@@ -3286,7 +3286,7 @@ namespace ts {
                 // this to determine if an import it has previously seen (and not written out) needs
                 // to be written to the file once the walk of the tree is complete.
                 //
-                // NOTE(cyrusn): This approach feels somewhat unfortunate.  A simple pass over the tree
+                // NOTE (cyrusn): This approach feels somewhat unfortunate.  A simple pass over the tree id:255 gh:256
                 // up front (for example, during checking) could determine if we need to emit the imports
                 // and we could then access that data during declaration emit.
                 writer.trackSymbol(symbol, enclosingDeclaration, meaning);
@@ -6777,7 +6777,7 @@ namespace ts {
             const type = getTypeFromTypeNode(node.type);
             if (parameterName.kind === SyntaxKind.Identifier) {
                 return createIdentifierTypePredicate(
-                    parameterName && parameterName.escapedText as string, // TODO: GH#18217
+                    parameterName && parameterName.escapedText as string, // TODO: GH#18217 id:230 gh:231
                     parameterName && getTypePredicateParameterIndex((node.parent as SignatureDeclaration).parameters, parameterName),
                     type);
             }
@@ -7335,7 +7335,7 @@ namespace ts {
                     const typeStr = typeToString(type, /*enclosingDeclaration*/ undefined, TypeFormatFlags.WriteArrayAsGenericType);
                     error(node, diag, typeStr, minTypeArgumentCount, typeParameters.length);
                     if (!isJs) {
-                        // TODO: Adopt same permissive behavior in TS as in JS to reduce follow-on editing experience failures (requires editing fillMissingTypeArguments)
+                        // TODO: Adopt same permissive behavior in TS as in JS to reduce follow-on editing experience failures (requires editing fillMissingTypeArguments) id:315 gh:316
                         return unknownType;
                     }
                 }
@@ -9002,7 +9002,7 @@ namespace ts {
                 }
             }
 
-            // TODO(anhans): A block should be context-sensitive if it has a context-sensitive return value.
+            // TODO (anhans): A block should be context-sensitive if it has a context-sensitive return value. id:254 gh:255
             return node.body.kind === SyntaxKind.Block ? false : isContextSensitive(node.body);
         }
 
@@ -9115,7 +9115,7 @@ namespace ts {
             reportErrors: boolean,
             errorReporter: ErrorReporter,
             compareTypes: TypeComparer): Ternary {
-            // TODO (drosen): De-duplicate code between related functions.
+            // TODO (drosen): De-duplicate code between related functions. id:708 gh:709
             if (source === target) {
                 return Ternary.True;
             }
@@ -10707,7 +10707,7 @@ namespace ts {
          * See signatureRelatedTo, compareSignaturesIdentical
          */
         function compareSignaturesIdentical(source: Signature, target: Signature, partialMatch: boolean, ignoreThisTypes: boolean, ignoreReturnTypes: boolean, compareTypes: (s: Type, t: Type) => Ternary): Ternary {
-            // TODO (drosen): De-duplicate code between related functions.
+            // TODO (drosen): De-duplicate code between related functions. id:258 gh:259
             if (source === target) {
                 return Ternary.True;
             }
@@ -12067,7 +12067,7 @@ namespace ts {
 
         function getTypeWithFacts(type: Type, include: TypeFacts) {
             if (type.flags & TypeFlags.IndexedAccess) {
-                // TODO (weswig): This is a substitute for a lazy negated type to remove the types indicated by the TypeFacts from the (potential) union the IndexedAccess refers to
+                // TODO (weswig): This is a substitute for a lazy negated type to remove the types indicated by the TypeFacts from the (potential) union the IndexedAccess refers to id:233 gh:234
                 //  - See discussion in https://github.com/Microsoft/TypeScript/pull/19275 for details, and test `strictNullNotNullIndexTypeShouldWork` for current behavior
                 const baseConstraint = getBaseConstraintOfType(type) || emptyObjectType;
                 const result = filterType(baseConstraint, t => (getTypeFacts(t) & include) !== 0);
@@ -14852,7 +14852,7 @@ namespace ts {
          * Returns true iff React would emit this tag name as a string rather than an identifier or qualified name
          */
         function isJsxIntrinsicIdentifier(tagName: JsxTagNameExpression) {
-            // TODO (yuisu): comment
+            // TODO (yuisu): comment id:317 gh:318
             switch (tagName.kind) {
                 case SyntaxKind.PropertyAccessExpression:
                 case SyntaxKind.ThisKeyword:
@@ -16255,7 +16255,7 @@ namespace ts {
         }
 
         function callLikeExpressionMayHaveTypeArguments(node: CallLikeExpression): node is CallExpression | NewExpression {
-            // TODO: Also include tagged templates (https://github.com/Microsoft/TypeScript/issues/11947)
+            // TODO: Also include tagged templates (https://github.com/Microsoft/TypeScript/issues/11947) id:299 gh:300
             return isCallOrNewExpression(node);
         }
 
@@ -18152,7 +18152,7 @@ namespace ts {
             return true;
         }
 
-        /** NOTE: Return value of `[]` means a different thing than `undefined`. `[]` means return `void`, `undefined` means return `never`. */
+        /** NOTE: Return value of `[]` means a different thing than `undefined`. `[]` means return `void`, `undefined` means return `never`. id:709 gh:710*/
         function checkAndAggregateReturnExpressionTypes(func: FunctionLikeDeclaration, checkMode: CheckMode): Type[] | undefined {
             const functionFlags = getFunctionFlags(func);
             const aggregatedTypes: Type[] = [];
@@ -18231,7 +18231,7 @@ namespace ts {
             else if (returnType && !hasExplicitReturn) {
                 // minimal check: function has syntactic return type annotation and no explicit return statements in the body
                 // this function does not conform to the specification.
-                // NOTE: having returnType !== undefined is a precondition for entering this branch so func.type will always be present
+                // NOTE: having returnType !== undefined is a precondition for entering this branch so func.type will always be present id:260 gh:261
                 error(getEffectiveReturnTypeNode(func), Diagnostics.A_function_whose_declared_type_is_neither_void_nor_any_must_return_a_value);
             }
             else if (returnType && strictNullChecks && !isTypeAssignableTo(undefinedType, returnType)) {
@@ -18582,12 +18582,12 @@ namespace ts {
             // The instanceof operator requires the left operand to be of type Any, an object type, or a type parameter type,
             // and the right operand to be of type Any, a subtype of the 'Function' interface type, or have a call or construct signature.
             // The result is always of the Boolean primitive type.
-            // NOTE: do not raise error if leftType is unknown as related error was already reported
+            // NOTE: do not raise error if leftType is unknown as related error was already reported id:236 gh:237
             if (!isTypeAny(leftType) &&
                 allTypesAssignableToKind(leftType, TypeFlags.Primitive)) {
                 error(left, Diagnostics.The_left_hand_side_of_an_instanceof_expression_must_be_of_type_any_an_object_type_or_a_type_parameter);
             }
-            // NOTE: do not raise error if right is unknown as related error was already reported
+            // NOTE: do not raise error if right is unknown as related error was already reported id:319 gh:320
             if (!(isTypeAny(rightType) || typeHasCallOrConstructSignatures(rightType) || isTypeSubtypeOf(rightType, globalFunctionType))) {
                 error(right, Diagnostics.The_right_hand_side_of_an_instanceof_expression_must_be_of_type_any_or_of_a_type_assignable_to_the_Function_interface_type);
             }
@@ -18925,7 +18925,7 @@ namespace ts {
                     }
                     else if (isTypeAny(leftType) || isTypeAny(rightType)) {
                         // Otherwise, the result is of type Any.
-                        // NOTE: unknown type here denotes error type. Old compiler treated this case as any type so do we.
+                        // NOTE: unknown type here denotes error type. Old compiler treated this case as any type so do we. id:303 gh:304
                         resultType = leftType === unknownType || rightType === unknownType ? unknownType : anyType;
                     }
 
@@ -19622,7 +19622,7 @@ namespace ts {
             if (node.kind === SyntaxKind.IndexSignature) {
                 checkGrammarIndexSignature(<SignatureDeclaration>node);
             }
-            // TODO (yuisu): Remove this check in else-if when SyntaxKind.Construct is moved and ambient context is handled
+            // TODO (yuisu): Remove this check in else-if when SyntaxKind.Construct is moved and ambient context is handled id:710 gh:711
             else if (node.kind === SyntaxKind.FunctionType || node.kind === SyntaxKind.FunctionDeclaration || node.kind === SyntaxKind.ConstructorType ||
                 node.kind === SyntaxKind.CallSignature || node.kind === SyntaxKind.Constructor ||
                 node.kind === SyntaxKind.ConstructSignature) {
@@ -19652,7 +19652,7 @@ namespace ts {
 
             forEach(node.parameters, checkParameter);
 
-            // TODO(rbuckton): Should we start checking JSDoc types?
+            // TODO (rbuckton): Should we start checking JSDoc types? id:262 gh:263
             if (node.type) {
                 checkSourceElement(node.type);
             }
@@ -20292,7 +20292,7 @@ namespace ts {
                 if (subsequentNode && subsequentNode.pos === node.end) {
                     if (subsequentNode.kind === node.kind) {
                         const errorNode: Node = (<FunctionLikeDeclaration>subsequentNode).name || subsequentNode;
-                        // TODO: GH#17345: These are methods, so handle computed name case. (`Always allowing computed property names is *not* the correct behavior!)
+                        // TODO: GH#17345: These are methods, so handle computed name case. (`Always allowing computed property names is *not* the correct behavior!) id:238 gh:239
                         const subsequentName = (<FunctionLikeDeclaration>subsequentNode).name;
                         if (node.name && subsequentName &&
                             (isComputedPropertyName(node.name) && isComputedPropertyName(subsequentName) ||
@@ -21524,7 +21524,7 @@ namespace ts {
             }
 
             // skip variable declarations that don't have initializers
-            // NOTE: in ES6 spec initializer is required in variable declarations where name is binding pattern
+            // NOTE: in ES6 spec initializer is required in variable declarations where name is binding pattern id:321 gh:322
             // so we'll always treat binding elements as initialized
             if (node.kind === SyntaxKind.VariableDeclaration && !node.initializer) {
                 return;
@@ -22300,7 +22300,7 @@ namespace ts {
             // Grammar checking
             if (!checkGrammarStatementInAmbientContext(node)) checkGrammarBreakOrContinueStatement(node);
 
-            // TODO: Check that target label is valid
+            // TODO: Check that target label is valid id:306 gh:307
         }
 
         function isGetAccessorWithAnnotatedSetAccessor(node: FunctionLike) {
@@ -22336,7 +22336,7 @@ namespace ts {
                 if (isGenerator) { // AsyncGenerator function or Generator function
                     // A generator does not need its return expressions checked against its return type.
                     // Instead, the yield expressions are checked against the element type.
-                    // TODO: Check return types of generators when return type tracking is added
+                    // TODO: Check return types of generators when return type tracking is added id:711 gh:712
                     // for generators.
                     return;
                 }
@@ -22873,7 +22873,7 @@ namespace ts {
             // Base class instance member variables and accessors can be overridden by
             // derived class instance member variables and accessors, but not by other kinds of members.
 
-            // NOTE: assignability is checked in checkClassDeclaration
+            // NOTE: assignability is checked in checkClassDeclaration id:264 gh:265
             const baseProperties = getPropertiesOfType(baseType);
             for (const baseProperty of baseProperties) {
                 const base = getTargetSymbol(baseProperty);
@@ -26638,7 +26638,7 @@ namespace ts {
             //     export_opt   ExternalImportDeclaration
             //     export_opt   AmbientDeclaration
             //
-            // TODO: The spec needs to be amended to reflect this grammar.
+            // TODO: The spec needs to be amended to reflect this grammar. id:242 gh:243
             if (node.kind === SyntaxKind.InterfaceDeclaration ||
                 node.kind === SyntaxKind.TypeAliasDeclaration ||
                 node.kind === SyntaxKind.ImportDeclaration ||

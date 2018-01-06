@@ -26,7 +26,7 @@ namespace ts.codefix {
         errorCodes,
         getCodeActions({ sourceFile, program, span: { start }, errorCode, cancellationToken }) {
             if (isSourceFileJavaScript(sourceFile)) {
-                return undefined; // TODO: GH#20113
+                return undefined; // TODO: GH#20113 id:356 gh:357
             }
 
             const token = getTokenAtPosition(sourceFile, start, /*includeJsDocComment*/ false);
@@ -481,7 +481,7 @@ namespace ts.codefix {
                     if (node === parent.left &&
                         (node.parent.parent.kind === SyntaxKind.VariableDeclaration || isAssignmentExpression(node.parent.parent, /*excludeCompoundAssignment*/ true))) {
                         // var x = x || {};
-                        // TODO: use getFalsyflagsOfType
+                        // TODO: use getFalsyflagsOfType id:341 gh:342
                         addCandidateType(usageContext, checker.getTypeAtLocation(parent.right));
                     }
                     break;

@@ -587,7 +587,7 @@ namespace ts {
             message: flattenDiagnosticMessageText(diagnostic.messageText, newLine),
             start: diagnostic.start,
             length: diagnostic.length,
-            /// TODO: no need for the tolowerCase call
+            /// TODO: no need for the tolowerCase call id:379 gh:380
             category: DiagnosticCategory[diagnostic.category].toLowerCase(),
             code: diagnostic.code
         };
@@ -1249,14 +1249,14 @@ namespace ts {
 /* tslint:enable:no-null */
 
 
-/// TODO: this is used by VS, clean this up on both sides of the interface
+/// TODO: this is used by VS, clean this up on both sides of the interface id:738 gh:739
 /* @internal */
 namespace TypeScript.Services {
     export const TypeScriptServicesFactory = ts.TypeScriptServicesFactory;
 }
 
 // 'toolsVersion' gets consumed by the managed side, so it's not unused.
-// TODO: it should be moved into a namespace though.
+// TODO: it should be moved into a namespace though. id:381 gh:382
 
 /* @internal */
 const toolsVersion = ts.versionMajorMinor;

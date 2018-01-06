@@ -10,7 +10,7 @@
 
 verify.codeFix({
     description: "Implement interface 'N1.I1'",
-    // TODO: GH#18445
+    // TODO: GH#18445 id:555 gh:556
     newFileContent:
 `namespace N1 {
     export interface I1 { x: number; }

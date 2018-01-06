@@ -21,7 +21,7 @@
 
 verify.codeFix({
     description: "Implement interface 'I<number>'",
-    // TODO: GH#18445
+    // TODO: GH#18445 id:628 gh:629
     newFileContent:
 `interface I<Species> {
     [Symbol.hasInstance](o: any): boolean;

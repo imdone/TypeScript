@@ -12,6 +12,6 @@ import mod = require("./aliasUsedAsNameValue_0");
 import b = require("./aliasUsedAsNameValue_1");
  
 export var a = function () {
-    //var x = mod.id; // TODO needed hack that mod is loaded
+    //var x = mod.id; // TODO needed hack that mod is loaded id:770 gh:771
     b.b(mod);
 }

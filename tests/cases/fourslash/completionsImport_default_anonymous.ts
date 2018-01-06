@@ -22,7 +22,7 @@ verify.applyCodeActionFromCompletion("1", {
     name: "fooBar",
     source: "/src/foo-bar",
     description: `Import 'fooBar' from module "./foo-bar"`,
-    // TODO: GH#18445
+    // TODO: GH#18445 id:606 gh:606
     newFileContent: `import fooBar from "./foo-bar";\r
 \r
 def

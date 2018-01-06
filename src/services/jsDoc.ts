@@ -150,7 +150,7 @@ namespace ts.JsDoc {
     export function getJSDocTagCompletionDetails(name: string): CompletionEntryDetails {
         return {
             name,
-            kind: ScriptElementKind.unknown, // TODO: should have its own kind?
+            kind: ScriptElementKind.unknown, // TODO: should have its own kind? id:733 gh:734
             kindModifiers: "",
             displayParts: [textPart(name)],
             documentation: emptyArray,
@@ -269,7 +269,7 @@ namespace ts.JsDoc {
         // * The opening comment line
         // * the first line (without a param) for the object's untagged info (this is also where the caret ends up)
         // * the '@param'-tagged lines
-        // * TODO: other tags.
+        // * TODO: other tags. id:365 gh:366
         // * the closing comment line
         // * if the caret was directly in front of the object, then we add an extra line and indentation.
         const preamble = "/**" + newLine +

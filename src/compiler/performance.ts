@@ -10,7 +10,7 @@ namespace ts {
 namespace ts.performance {
     declare const onProfilerEvent: { (markName: string): void; profiler: boolean; };
 
-    // NOTE: cannot use ts.noop as core.ts loads after this
+    // NOTE: cannot use ts.noop as core.ts loads after this id:311 gh:312
     const profilerEvent: (markName: string) => void = typeof onProfilerEvent === "function" && onProfilerEvent.profiler === true ? onProfilerEvent : () => { /*empty*/ };
 
     let enabled = false;

@@ -5,7 +5,7 @@
 ///<reference path='typescript.ts' />
 
 module TypeScript {
-    // TODO: refactor indent logic for use in emit
+    // TODO: refactor indent logic for use in emit id:423 gh:424
     export class PrintContext {
         public builder = "";
         public indent1 = "  ";
@@ -72,7 +72,7 @@ module TypeScript {
 ///<reference path='typescript.ts' />
 var TypeScript;
 (function (TypeScript) {
-    // TODO: refactor indent logic for use in emit
+    // TODO: refactor indent logic for use in emit id:424 gh:425
     var PrintContext = /** @class */ (function () {
         function PrintContext(outfile, parser) {
             this.outfile = outfile;

@@ -391,7 +391,7 @@ namespace ts {
     export function isThis(node: Node): boolean {
         switch (node.kind) {
             case SyntaxKind.ThisKeyword:
-            // case SyntaxKind.ThisType: TODO: GH#9267
+            // case SyntaxKind.ThisType: TODO: GH#9267 id:478 gh:479
                 return true;
             case SyntaxKind.Identifier:
                 // 'this' as a parameter

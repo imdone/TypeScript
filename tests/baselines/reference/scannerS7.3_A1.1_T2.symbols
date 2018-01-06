@@ -19,7 +19,7 @@ x
 if (x !== 1) {
 >x : Symbol(x, Decl(scannerS7.3_A1.1_T2.ts, 11, 3))
 
-  $ERROR('#1: var\\nx\\n=\\n1\\n; x === 1. Actual: ' + (x));
+  $ERROR('#1: var\\nx\\n=\\n1\\n; x === 1. Actual: ' + (x)); id:476 gh:477
 >x : Symbol(x, Decl(scannerS7.3_A1.1_T2.ts, 11, 3))
 }
 

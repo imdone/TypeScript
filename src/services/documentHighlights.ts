@@ -202,7 +202,7 @@ namespace ts.DocumentHighlights {
                     return !statement.label || isLabeledBy(node, statement.label.text);
                 default:
                     // Don't cross function boundaries.
-                    // TODO: GH#20090
+                    // TODO: GH#20090 id:380 gh:381
                     return (isFunctionLike(node) && "quit") as false | "quit";
             }
         });

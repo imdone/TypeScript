@@ -4,7 +4,7 @@ class Event {
 
 	 constructor () {
 
-		 // TODO: remove
+		 // TODO: remove id:509 gh:510
 
 		 this._listeners = [];
 

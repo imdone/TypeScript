@@ -1744,7 +1744,7 @@ namespace ts {
         }
 
         function createIntlCollatorStringComparer(locale: string | undefined): Comparer<string> {
-            // Intl.Collator.prototype.compare is bound to the collator. See NOTE in
+            // Intl.Collator.prototype.compare is bound to the collator. See NOTE in id:325 gh:326
             // http://www.ecma-international.org/ecma-402/2.0/#sec-Intl.Collator.prototype.compare
             const comparer = new Intl.Collator(locale, { usage: "sort", sensitivity: "variant" }).compare;
             return (a, b) => compareWithCallback(a, b, comparer);

@@ -3,7 +3,7 @@
 //// [|let t: XXX/*0*/.I;|]
 
 // @Filename: ./module.ts
-//// export module XXX {
+//// export module XXX { id:614 gh:615
 ////    export interface I {
 ////    }
 //// }

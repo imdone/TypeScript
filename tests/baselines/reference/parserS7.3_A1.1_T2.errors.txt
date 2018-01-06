@@ -18,7 +18,7 @@ tests/cases/conformance/parser/ecmascript5/parserS7.3_A1.1_T2.ts(17,3): error TS
     =
     1;
     if (x !== 1) {
-      $ERROR('#1: var\\nx\\n=\\n1\\n; x === 1. Actual: ' + (x));
+      $ERROR('#1: var\\nx\\n=\\n1\\n; x === 1. Actual: ' + (x)); id:761 gh:762
       ~~~~~~
 !!! error TS2552: Cannot find name '$ERROR'. Did you mean 'Error'?
     }

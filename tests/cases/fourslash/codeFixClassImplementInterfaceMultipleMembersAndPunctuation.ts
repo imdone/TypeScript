@@ -13,7 +13,7 @@
 
 verify.codeFix({
     description: "Implement interface 'I1'",
-    // TODO: GH#18445
+    // TODO: GH#18445 id:790 gh:791
     newFileContent:
 `interface I1 {
     x: number,

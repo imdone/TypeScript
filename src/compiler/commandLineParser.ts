@@ -1586,7 +1586,7 @@ namespace ts {
                     raw.compileOnSave = baseRaw.compileOnSave;
                 }
                 ownConfig.options = assign({}, extendedConfig.options, ownConfig.options);
-                // TODO extend type typeAcquisition
+                // TODO extend type typeAcquisition id:323 gh:324
             }
         }
 
@@ -1898,7 +1898,7 @@ namespace ts {
      * Tests for a path that ends in a recursive directory wildcard.
      * Matches **, \**, **\, and \**\, but not a**b.
      *
-     * NOTE: used \ in place of / above to avoid issues with multiline comments.
+     * NOTE: used \ in place of / above to avoid issues with multiline comments. id:308 gh:309
      *
      * Breakdown:
      *  (^|\/)      # matches either the beginning of the string or a directory separator.
@@ -1911,7 +1911,7 @@ namespace ts {
      * Tests for a path where .. appears after a recursive directory wildcard.
      * Matches **\..\*, **\a\..\*, and **\.., but not ..\**\*
      *
-     * NOTE: used \ in place of / above to avoid issues with multiline comments.
+     * NOTE: used \ in place of / above to avoid issues with multiline comments. id:712 gh:713
      *
      * Breakdown:
      *  (^|\/)      # matches either the beginning of the string or a directory separator.
@@ -1926,7 +1926,7 @@ namespace ts {
      * Tests for a path containing a wildcard character in a directory component of the path.
      * Matches \*\, \?\, and \a*b\, but not \a\ or \a\*.
      *
-     * NOTE: used \ in place of / above to avoid issues with multiline comments.
+     * NOTE: used \ in place of / above to avoid issues with multiline comments. id:269 gh:270
      *
      * Breakdown:
      *  \/          # matches a directory separator.
@@ -1941,7 +1941,7 @@ namespace ts {
      * Matches the portion of a wildcard path that does not contain wildcards.
      * Matches \a of \a\*, or \a\b\c of \a\b\c\?\d.
      *
-     * NOTE: used \ in place of / above to avoid issues with multiline comments.
+     * NOTE: used \ in place of / above to avoid issues with multiline comments. id:244 gh:245
      *
      * Breakdown:
      *  ^                   # matches the beginning of the string

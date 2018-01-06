@@ -150,7 +150,7 @@ declare namespace ts.server.protocol {
         body?: TextInsertion;
     }
     /**
-     * A request to get TODO comments from the file
+     * A request to get TODO comments from the file id:3 gh:4
      */
     interface TodoCommentRequest extends FileRequest {
         command: CommandTypes.TodoComments;
@@ -161,7 +161,7 @@ declare namespace ts.server.protocol {
      */
     interface TodoCommentRequestArgs extends FileRequestArgs {
         /**
-         * Array of target TodoCommentDescriptors that describes TODO comments to be found
+         * Array of target TodoCommentDescriptors that describes TODO comments to be found id:1 gh:2
          */
         descriptors: TodoCommentDescriptor[];
     }
@@ -1022,7 +1022,7 @@ declare namespace ts.server.protocol {
     }
     /**
      * Request to obtain the list of files that should be regenerated if target file is recompiled.
-     * NOTE: this us query-only operation and does not generate any output on disk.
+     * NOTE: this us query-only operation and does not generate any output on disk. id:2 gh:3
      */
     interface CompileOnSaveAffectedFileListRequest extends FileRequest {
         command: CommandTypes.CompileOnSaveAffectedFileList;

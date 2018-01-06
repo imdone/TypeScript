@@ -11,7 +11,7 @@
 verify.codeFixAll({
     fixId: "addMissingMember",
     newFileContent:
-    // TODO: GH#18445
+    // TODO: GH#18445 id:622 gh:623
 `class C {
     x: number;\r
     y(): any {\r
